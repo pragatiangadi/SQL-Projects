@@ -1,0 +1,404 @@
+/*
+Final Exam DB Script
+Created By Gene Locklear
+April 29, 2017
+*/
+DROP DATABASE IF EXISTS paceimperial;
+CREATE DATABASE paceimperial;
+USE paceimperial;
+SELECT 'Database Created' AS MSG_1;
+CREATE TABLE stormtrooper_UNIT(
+IDNumber VARCHAR(5) NOT NULL,
+Designation VARCHAR(20) NOT NULL,
+Size ENUM('Company','Battalion','Regiment','Division'),
+Type ENUM('Scout','Infantry','Assault Infantry') NOT NULL,
+TO_Strength INT NOT NULL,
+Status ENUM('Regular','Guard','Imperial Guard'),
+CONSTRAINT pk_stormtrooper_UNIT PRIMARY KEY(IDNumber)
+);
+SELECT 'Unit Table Created' AS MSG_2;
+INSERT INTO stormtrooper_UNIT
+VALUES('DIV01','1st_Div','Division','Infantry',900,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('DIV02','2nd_Div','Division','Infantry',900,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('DIV03','3rd_Div','Division','Infantry',900,'Regular');
+SELECT 'Unit Table  Divisions Populated' AS MSG_3;
+INSERT INTO stormtrooper_UNIT
+VALUES('REG01','1st_StormReg','Regiment','Infantry',300,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('REG02','2nd_StormReg','Regiment','Infantry',300,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('REG03','3rd_StormReg','Regiment','Infantry',300,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('REG04','4th_StormReg','Regiment','Infantry',300,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('REG05','5th_StormReg','Regiment','Infantry',300,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('REG06','6th_StormReg','Regiment','Infantry',300,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('REG07','7th_StormReg','Regiment','Infantry',300,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('REG08','8th_StormReg','Regiment','Infantry',300,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('REG09','9th_StormReg','Regiment','Infantry',300,'Regular');
+SELECT 'Unit Table  Regiments Populated' AS MSG_4;
+INSERT INTO stormtrooper_UNIT
+VALUES('BN01','1_Bn','Battalion','Infantry',150,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN02','2_Bn','Battalion','Infantry',150,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN03','3_Bn','Battalion','Infantry',150,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN04','4_Bn','Battalion','Infantry',150,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN05','5_Bn','Battalion','Infantry',150,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN06','6_Bn','Battalion','Infantry',150,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN07','7_Bn','Battalion','Infantry',150,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN08','8_Bn','Battalion','Infantry',150,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN09','9_Bn','Battalion','Infantry',150,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN10','10_Bn','Battalion','Infantry',150,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN11','11_Bn','Battalion','Infantry',150,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN12','12_Bn','Battalion','Infantry',150,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN13','13_Bn','Battalion','Infantry',150,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN14','14_Bn','Battalion','Infantry',150,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN15','15_Bn','Battalion','Infantry',150,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN16','16_Bn','Battalion','Infantry',150,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN17','17_Bn','Battalion','Infantry',150,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('BN18','18_Bn','Battalion','Infantry',150,'Regular');
+SELECT 'Unit Table Battalions Populated' AS MSG_5;
+INSERT INTO stormtrooper_UNIT
+VALUES('Co001','1_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co002','1_CoB','Company','Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co003','1_CoC','Company','Scout',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co004','2_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co005','2_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co006','2_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co007','3_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co008','3_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co009','3_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co010','4_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co011','4_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co012','4_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co013','5_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co014','5_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co015','5_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co016','6_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co017','6_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co018','6_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co019','7_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co020','7_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co021','7_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co022','8_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co023','8_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co024','8_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co025','9_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co026','9_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co027','9_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co028','10_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co029','10_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co030','10_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co031','11_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co032','11_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co033','11_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co034','12_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co035','12_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co036','12_CoC','Company','Scout',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co037','13_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co038','13_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co039','13_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co040','14_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co041','14_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co042','14_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co043','15_CoA','Company','Assault Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co044','15_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co045','15_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co046','16_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co047','16_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co048','16_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co049','17_CoA','Company','Assault Infantry',50,'Guard');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co050','17_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co051','17_CoC','Company','Scout',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co052','18_CoA','Company','Assault Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co053','18_CoB','Company','Infantry',50,'Regular');
+INSERT INTO stormtrooper_UNIT
+VALUES('Co054','18_CoC','Company','Scout',50,'Regular');
+SELECT 'Unit Table Companies Populated' AS MSG_6;
+CREATE TABLE imperial_commander(
+CommanderID CHAR(5) NOT NULL,
+Name VARCHAR(25) NOT NULL,
+Rank ENUM('Colonel','General','FieldMarshall') NOT NULL,
+UnitID VARCHAR(5) NOT NULL,
+CONSTRAINT pk_imperial_commander PRIMARY KEY(CommanderID),
+CONSTRAINT fk_imperial_commander FOREIGN KEY(UnitID) REFERENCES
+stormtrooper_UNIT(IDNumber)
+);
+SELECT 'Commander Table Divisions Created' AS MSG_7;
+INSERT INTO imperial_commander
+VALUES('FM001','Austerlitz','FieldMarshall','DIV01');
+INSERT INTO imperial_commander
+VALUES('FM002','Prussix','FieldMarshall','DIV02');
+INSERT INTO imperial_commander
+VALUES('FM003','Mescex','FieldMarshall','DIV03');
+INSERT INTO imperial_commander
+VALUES('GE001','Lonada','General','REG01');
+INSERT INTO imperial_commander
+VALUES('GE002','Pyrex','General','REG02');
+INSERT INTO imperial_commander
+VALUES('GE003','Dyvxon','General','REG03');
+INSERT INTO imperial_commander
+VALUES('GE004','Devysax','General','REG04');
+INSERT INTO imperial_commander
+VALUES('GE005','Brollox','General','REG05');
+INSERT INTO imperial_commander
+VALUES('GE006','Termeti','General','REG06');
+INSERT INTO imperial_commander
+VALUES('GE007','Kullox','General','REG07');
+INSERT INTO imperial_commander
+VALUES('GE008','Jytcub','General','REG08');
+INSERT INTO imperial_commander
+VALUES('GE009','Pfrey','General','REG09');
+INSERT INTO imperial_commander
+VALUES('CL001','Onyx','General','BN01');
+INSERT INTO imperial_commander
+VALUES('CL002','Klexsus','General','BN02');
+INSERT INTO imperial_commander
+VALUES('CL003','Tyuyu','General','BN03');
+INSERT INTO imperial_commander
+VALUES('CL004','Hyllab','General','BN04');
+INSERT INTO imperial_commander
+VALUES('CL005','Iopyop','General','BN05');
+INSERT INTO imperial_commander
+VALUES('CL006','Fewzex','General','BN06');
+INSERT INTO imperial_commander
+VALUES('CL007','Syteus','General','BN07');
+INSERT INTO imperial_commander
+VALUES('CL008','Hllupox','General','BN08');
+INSERT INTO imperial_commander
+VALUES('CL009','Tert','General','BN09');
+INSERT INTO imperial_commander
+VALUES('CL010','Byderax','General','BN10');
+INSERT INTO imperial_commander
+VALUES('CL011','Cvoyui','General','BN11');
+INSERT INTO imperial_commander
+VALUES('CL012','Juytbox','General','BN12');
+INSERT INTO imperial_commander
+VALUES('CL013','Fuyox','General','BN13');
+INSERT INTO imperial_commander
+VALUES('CL014','Rydex','General','BN14');
+INSERT INTO imperial_commander
+VALUES('CL015','Lopuyax','General','BN15');
+INSERT INTO imperial_commander
+VALUES('CL016','Guopus','General','BN16');
+INSERT INTO imperial_commander
+VALUES('CL017','Uyus','General','BN17');
+INSERT INTO imperial_commander
+VALUES('CL018','Sdyrex','General','BN18');
+SELECT 'Commander Table Divisions Populated' AS MSG_8;
+CREATE TABLE stormtrooper_DIV(
+UnitID VARCHAR(5) NOT NULL,
+RegimentA CHAR(5) NOT NULL,
+RegimentB CHAR(5) NOT NULL,
+RegimentC CHAR(5) NOT NULL,
+CONSTRAINT pk_stormtrooper_DIV PRIMARY KEY(UnitID),
+CONSTRAINT fk1_stormtrooper_DIV FOREIGN KEY(UnitID) REFERENCES
+stormtrooper_UNIT(IDNumber)
+);
+SELECT 'Divisions Created' AS MSG_9;
+INSERT INTO stormtrooper_DIV
+VALUES('DIV01','REG01','REG02','REG03');
+INSERT INTO stormtrooper_DIV
+VALUES('DIV02','REG04','REG05','REG06');
+INSERT INTO stormtrooper_DIV
+VALUES('DIV03','REG07','REG08','REG09');
+SELECT 'Divisions Populated' AS MSG_10;
+CREATE TABLE stormtrooper_REG(
+UnitID VARCHAR(5) NOT NULL,
+BattalionA CHAR(5) NOT NULL,
+BattalionB CHAR(5) NOT NULL,
+CONSTRAINT pk_stormtrooper_REG PRIMARY KEY(UnitID),
+CONSTRAINT fk1_stormtrooper_REG FOREIGN KEY(UnitID) REFERENCES
+stormtrooper_UNIT(IDNumber)
+);
+SELECT 'Regiments Created' AS MSG_11;
+INSERT INTO stormtrooper_REG VALUES('REG01','BN01','BN02');
+INSERT INTO stormtrooper_REG VALUES('REG02','BN03','BN04');
+INSERT INTO stormtrooper_REG VALUES('REG03','BN05','BN06');
+INSERT INTO stormtrooper_REG VALUES('REG04','BN07','BN08');
+INSERT INTO stormtrooper_REG VALUES('REG05','BN09','BN10');
+INSERT INTO stormtrooper_REG VALUES('REG06','BN11','BN12');
+INSERT INTO stormtrooper_REG VALUES('REG07','BN13','BN14');
+INSERT INTO stormtrooper_REG VALUES('REG08','BN15','BN16');
+INSERT INTO stormtrooper_REG VALUES('REG09','BN17','BN18');
+SELECT 'Regiments Populated' AS MSG_12;
+CREATE TABLE stormtrooper_BN(
+UnitID VARCHAR(5) NOT NULL,
+CompanyA CHAR(5) NOT NULL,
+CompanyB CHAR(5) NOT NULL,
+CompanyC CHAR(5) NOT NULL,
+CONSTRAINT pk_stormtrooper_BN PRIMARY KEY(UnitID),
+CONSTRAINT fk1_stormtrooper_BN FOREIGN KEY(UnitID) REFERENCES
+stormtrooper_UNIT(IDNumber)
+);
+SELECT 'Battalions Created' AS MSG_13;
+INSERT INTO stormtrooper_BN VALUES('BN01','Co001','Co002','Co003');
+INSERT INTO stormtrooper_BN VALUES('BN02','Co004','Co005','Co006');
+INSERT INTO stormtrooper_BN VALUES('BN03','Co007','Co008','Co009');
+INSERT INTO stormtrooper_BN VALUES('BN04','Co010','Co011','Co012');
+INSERT INTO stormtrooper_BN VALUES('BN05','Co013','Co014','Co015');
+INSERT INTO stormtrooper_BN VALUES('BN06','Co016','Co017','Co018');
+INSERT INTO stormtrooper_BN VALUES('BN07','Co019','Co020','Co021');
+INSERT INTO stormtrooper_BN VALUES('BN08','Co022','Co023','Co024');
+INSERT INTO stormtrooper_BN VALUES('BN09','Co025','Co026','Co027');
+INSERT INTO stormtrooper_BN VALUES('BN10','Co028','Co029','Co030');
+INSERT INTO stormtrooper_BN VALUES('BN11','Co031','Co032','Co033');
+INSERT INTO stormtrooper_BN VALUES('BN12','Co034','Co035','Co036');
+INSERT INTO stormtrooper_BN VALUES('BN13','Co037','Co038','Co039');
+INSERT INTO stormtrooper_BN VALUES('BN14','Co040','Co041','Co042');
+INSERT INTO stormtrooper_BN VALUES('BN15','Co043','Co044','Co045');
+INSERT INTO stormtrooper_BN VALUES('BN16','Co046','Co047','Co048');
+INSERT INTO stormtrooper_BN VALUES('BN17','Co049','Co050','Co051');
+INSERT INTO stormtrooper_BN VALUES('BN18','Co052','Co053','Co054');
+SELECT 'Battalions Populated' AS MSG_14;
+CREATE TABLE stormtrooper_CO(
+UnitID VARCHAR(5) NOT NULL,
+Troopers_KIA INT NOT NULL,
+Troopers_WIA INT GENERATED ALWAYS AS (CEILING(Troopers_KIA * 0.25))
+STORED NOT NULL,
+Troopers_FullDuty INT GENERATED ALWAYS AS (50 - Troopers_KIA +
+Troopers_WIA) STORED NOT NULL,
+OH_Strength INT GENERATED ALWAYS AS (Troopers_FullDuty +
+Troopers_WIA) STORED NOT NULL,
+CONSTRAINT pk_stormtrooper_CO PRIMARY KEY(UnitID),
+CONSTRAINT fk1_stormtrooper_CO FOREIGN KEY(UnitID) REFERENCES
+stormtrooper_UNIT(IDNumber)
+);
+SELECT 'Companies Created' AS MSG_15;
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co001',5);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co002',9);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co003',7);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co004',2);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co005',4);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co006',6);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co007',3);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co008',6);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co009',9);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co010',5);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co011',1);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co012',1);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co013',
+15);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co014',
+19);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co015',
+17);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co016',4);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co017',4);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co018',8);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co019',5);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co020',6);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co021',
+12);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co022',
+13);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co023',
+21);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co024',6);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co025',7);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co026',7);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co027',7);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co028',5);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co029',8);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co030',8);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co031',5);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co032',9);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co033',8);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co034',5);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co035',2);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co036',8);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co037',2);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co038',9);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co039',6);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co040',2);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co041',6);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co042',2);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co043',1);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co044',9);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co045',
+10);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co046',5);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co047',9);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co048',9);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co049',5);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co050',8);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co051',7);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co052',5);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co053',6);
+INSERT INTO stormtrooper_CO (UnitID,Troopers_KIA) VALUES('Co054',5);
+SELECT 'Companies Populated' AS MSG_16;
+SELECT 'Script Completed' AS MSG_17;
